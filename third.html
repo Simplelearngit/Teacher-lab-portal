@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grade 1 Foundation</title>
+    <link rel="stylesheet" href="third.css">
+    
+    <style>
+        /* Example style to decrease distance between sessions */
+        .sessions {
+            display: flex; /* Use flexbox for columns */
+            justify-content: space-around; /* Distribute space evenly */
+            gap: 10px; /* Adjust the gap between columns */
+        }
+
+        .column {
+            flex: 1; /* Equal width for columns */
+            margin: 0; /* Remove default margin */
+        }
+
+        .session {
+            margin-bottom: 10px; /* Adjust vertical spacing between sessions */
+            padding: 10px; /* Add padding for better readability */
+            background-color: #f0f0f0; /* Example background color */
+            border: 1px solid #ccc; /* Example border */
+            border-radius: 5px; /* Example border radius */
+            cursor: pointer; /* Add cursor pointer for clickable sessions */
+        }
+        
+        .sidebar img.teacher-icon {
+            width: 120px; /* Increase width */
+            margin-top: 20%; /* Add spacing between icon and text */
+        }
+
+        /* Popup style */
+        .popup {
+            display: none;
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            max-width: 80%;
+            max-height: 80%;
+            overflow: auto;
+        }
+
+        .popup-content {
+            text-align: center;
+        }
+
+        .popup-image {
+            max-width: 400px;
+            max-height: 200px;
+            margin-bottom: 10px;
+        }
+
+        .popup-dropdown {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <img src="First Page Pngs (1)/4x/Asset 10@4x.png" alt="Logo">
+        <a href="fourth.html">Teach</a> <!-- Updated link -->
+        <a href="#">Tasks</a>
+        <a href="#">Assign</a>
+        <a href="#">Assess</a>
+        <a href="#">Report</a>
+        <a href="#">Library</a>
+        <img src="EEL app screens/Page 2/4x/Asset 42@4x.png" alt="Teacher Icon" class="teacher-icon">
+    </div>
+    
+    <div class="content">
+        <div class="header">
+            <h1>Grade 1 | Foundation</h1>
+            <div class="profile">K</div>
+        </div>
+        <div class="sessions">
+            <div class="column">
+                <div class="session" onclick="showPopup('children')">Session 1: Meet the Children</div>
+                <div class="session">Session 3: At the Sports Ground</div>
+                <div class="session">Session 5: At a Farm</div>
+                <div class="session">Session 7: At the Street Shops</div>
+                <div class="session">Session 9: On a Road Trip</div>
+                <div class="session">Session 11: On a Picnic</div>
+                <div class="session">Session 13: At the Funfair</div>
+                <div class="session">Session 15: At a Birthday Party</div>
+                <div class="session">Session 17: On the Roadside</div>
+            </div>
+            <div class="column">
+                <div class="session">Session 2: In a Classroom</div>
+                <div class="session">Session 4: Inside a Room</div>
+                <div class="session">Session 6: In the Dining room</div>
+                <div class="session">Session 8: In the Vegetable Market</div>
+                <div class="session">Session 10: On a Family Visit</div>
+                <div class="session">Session 12: On a Wildlife Trip</div>
+                <div class="session">Session 14: At the Sports Centre</div>
+                <div class="session">Session 16: In the Animal Show</div>
+                <div class="session">Session 18: On the Roadside</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Popup content -->
+    <div id="popup-children" class="popup">
+        <div class="popup-content">
+            <img src="EEL app screens/Pop up 1/4x/Asset 99@4x.png" alt="Teacher Icon" class="popup-image">
+        
+            <p>View The Content For</p>
+            <select class="popup-dropdown">
+                <option value="class1">Select Class</option>
+                <option value="class1">Class 1</option>
+                <option value="class2">Class 2</option>
+                <option value="class3">Class 3</option>
+                <option value="class4">Class 4</option>
+                <option value="class5">Class 5</option>
+                <option value="class6">Class 6</option>
+                <option value="class7">Class 7</option>
+                <option value="class8">Class 8</option>
+                <option value="class9">Class 9</option>
+                <option value="class10">Class 10</option>
+                <option value="class11">Class 11</option>
+                <option value="class12">Class 12</option>
+            </select>
+
+            <button onclick="hidePopup('children')">close</button>
+        </div>
+    </div>
+
+    <script>
+        function showPopup(sessionId) {
+            var popup = document.getElementById('popup-' + sessionId);
+            if (popup) {
+                popup.style.display = 'block';
+            }
+        }
+
+        function hidePopup(sessionId) {
+            var popup = document.getElementById('popup-' + sessionId);
+            if (popup) {
+                popup.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>
