@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grade 1 Foundation | Session 1: Meet the Children</title>
+    <link rel="stylesheet" href="fifth.css">
+    <style>
+        /* Basic styling for the layout */
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100vh;
+        }
+
+        .header, .footer {
+            background-color: #f0f0f0;
+            padding: 20px;
+            text-align: left;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            height: 80px;
+        }
+
+        .profile {
+            background-color: #ddd;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .main-content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-grow: 1;
+            padding: 20px;
+        }
+
+        .video-placeholder {
+            width: 100%;
+            max-width: 600px;
+        }
+
+        .footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .page-indicator {
+            font-size: 16px;
+        }
+
+        .finish-button {
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .finish-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header Section -->
+        <div class="header">
+            <img src="EEL app screens/page 5/4x/Asset 157@4x.png" alt="Logo" class="logo">
+            <h1>Grade 1 Foundation | Session 1: Meet the Children</h1>
+            <div class="profile">K</div>
+        </div>
+
+        <!-- Main Content Section -->
+        <div class="main-content">
+            <video class="video-placeholder" controls>
+                <source src="TuTiTu Compilation _ Numbers & Letters _ Fun Learning Videos for Children.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+
+        <!-- Footer Section -->
+        <div class="footer">
+            <div class="page-indicator">Page 1/1</div>
+            <button class="finish-button" onclick="goBack()">Finish</button>
+        </div>
+    </div>
+
+    <!-- JavaScript to handle button click -->
+    <script>
+        function goBack() {
+            // Navigate back to the previous page in history
+            window.history.back();
+        }
+    </script>
+</body>
+</html>

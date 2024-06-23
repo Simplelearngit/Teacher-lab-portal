@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grade 1 | Foundation | Session 1</title>
+    <link rel="stylesheet" href="example.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <img src="EEL app screens/page 5/4x/Asset 157@4x.png" alt="Logo">
+            </div>
+            <div class="title">
+                <h1>Grade 1 | Foundation | Session 1: Meet the Children | Vocabulary</h1>
+            </div>
+        
+        </header>
+        <main>
+            
+            <div class="content">
+                <div class="word-section">
+                    <h2>Like</h2>
+                </div>
+                <div class="controls">
+                    <button class="control-button" onclick="playText()">▶</button>
+                    <button class="control-button" onclick="startRecording()">🎤</button>
+                    <button class="control-button" onclick="pauseText()">⏸</button>
+                </div>
+                <div class="image-and-text">
+                    <div class="image-section">
+                        <img src="EEL app screens/Page 7/4x/Asset 239@4x.png" alt="Children playing">
+                    </div>
+                    <div class="definition-section">
+                        <div class="word-type">
+                            <button class="word-button active">Verb</button>
+                            <button class="word-button">Noun</button>
+                        </div>
+                        <div class="meaning">
+                            <p><strong>Meaning :</strong></p>
+                            <p>similar to somebody or something.</p>
+                        </div>
+                        <div class="example">
+                            <p><strong>Example :</strong></p>
+                            <p>He is like his father.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer>
+            <div class="footer-buttons">
+                <button class="footer-button" onclick="stopRecording()">Submit</button>
+                <button class="footer-button" onclick="finishSession()">Finish</button>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        let speechSynthesisUtterance = new SpeechSynthesisUtterance();
+        let isPaused = false;
+        let mediaRecorder;
+        let audioChunks = [];
+
+        function playText() {
+            let word = document.querySelector('.word-section h2').innerText;
+            let meaning = document.querySelector('.meaning p:nth-child(2)').innerText;
+            let text = word + '. Meaning: ' + meaning;
+            if (isPaused) {
+                speechSynthesis.resume();
+            } else {
+                speechSynthesisUtterance.text = text;
+                speechSynthesis.speak(speechSynthesisUtterance);
+            }
+            isPaused = false;
+        }
+
+        function pauseText() {
+            speechSynthesis.pause();
+            isPaused = true;
+        }
+
+        function startRecording() {
+            navigator.mediaDevices.getUserMedia({ audio: true })
+                .then(stream => {
+                    mediaRecorder = new MediaRecorder(stream);
+                    mediaRecorder.start();
+                    mediaRecorder.ondataavailable = event => {
+                        audioChunks.push(event.data);
+                    };
+                })
+                .catch(error => {
+                    console.error('Error accessing microphone', error);
+                });
+        }
+
+        function stopRecording() {
+            if (mediaRecorder) {
+                mediaRecorder.stop();
+                mediaRecorder.onstop = () => {
+                    const audioBlob = new Blob(audioChunks, { type: 'audio/wav' });
+                    const audioUrl = URL.createObjectURL(audioBlob);
+                    const audio = new Audio(audioUrl);
+                    audio.play();
+                };
+            }
+        }
+
+        function finishSession() {
+            window.location.href = 'fourth.html'; // Redirect to fourth.html
+        }
+    </script>
+</body>
+</html>

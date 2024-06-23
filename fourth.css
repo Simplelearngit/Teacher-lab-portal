@@ -1,0 +1,167 @@
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0; /* Reset default margin */
+}
+
+/* Sidebar styles */
+.sidebar {
+    background-color: #34495e;
+    color: #fff;
+    width: 250px;
+    height: 100%;
+    padding: 20px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sidebar .logo img {
+    width: 100px;
+    height: auto;
+}
+
+.sidebar nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar nav ul li {
+    padding: 10px 0;
+    cursor: pointer;
+}
+
+.sidebar nav ul li.active {
+    background-color: #555;
+}
+
+.sidebar .teacher-icon img {
+    width: 120px;
+    margin-top: auto;
+}
+
+/* Main content styles */
+.main-content {
+    background-color: #fff;
+    width: calc(100% - 250px); /* Adjusted width to accommodate sidebar */
+    height: 100%;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow: auto; /* enable scrolling if content exceeds height */
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.header h1 {
+    font-size: 24px;
+}
+
+.profile-button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Cards adjust based on available width */
+    gap: 20px;
+}
+
+.card {
+    background-color: #f0f0f0;
+    padding: 15px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px); /* Lift up on hover */
+}
+
+.card .card-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.card img {
+    width: 40%; /* Adjusted image size */
+    height: auto;
+    border-radius: 10px;
+    margin-right: 20px;
+}
+
+.card .text-content {
+    flex: 1;
+    padding-right: 10px; /* Added padding for the text content */
+}
+
+.card h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.card ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.card ul li {
+    padding: 5px 0;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 100%;
+    }
+
+    .main-content {
+        width: 100%;
+    }
+
+    .cards {
+        grid-template-columns: repeat(1, 1fr); /* One card per row on smaller screens */
+    }
+
+    .card {
+        width: 100%; /* Full width for cards on smaller screens */
+        padding: 15px; /* Decreased padding for smaller screens */
+        flex-direction: column;
+    }
+
+    .card img {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .card .text-content {
+        margin-bottom: 10px;
+        padding-right: 0; /* Adjusted padding for smaller screens */
+    }
+}

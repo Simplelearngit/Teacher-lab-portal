@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neo Language Labs</title>
+    <link rel="stylesheet" href="fourth.css">
+    <style>
+        /* Added CSS for layout */
+        .cards {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 50px; /* Adjust the gap between cards */
+        }
+
+        .card {
+            width: calc(50% - 60px); /* Two cards in one row with some gap */
+            background-color: #f0f0f0; /* Adjust background color */
+            border-radius: 8px; /* Rounded corners */
+            overflow: hidden; /* Ensures cards don't overflow */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: box-shadow for cards */
+        }
+
+        .card-content {
+            display: flex;
+            align-items: center;
+            padding: 50px;
+        }
+
+        .card img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .text-content {
+            margin-left: 20px;
+        }
+
+        .text-content h2 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .text-content ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .text-content ul li {
+            margin-bottom: 5px;
+        }
+
+        .text-content ul li a {
+            text-decoration: none; /* Remove default text decoration */
+            color: black; /* Set link color to black */
+            cursor: pointer; /* Change cursor to pointer */
+        }
+
+        .text-content ul li a:hover {
+            text-decoration: none; /* Remove underline on hover */
+        }
+
+        /* Popup styles */
+        .popup {
+            display: none; /* Hidden by default */
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 300px;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            text-align: center;
+            z-index: 1000;
+        }
+
+        .popup h2 {
+            margin-top: 0;
+        }
+
+        .popup img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-top: 10px;
+        }
+
+        .popup button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .popup button:hover {
+            background-color: #0056b3;
+        }
+
+        .popup-overlay {
+            display: none; /* Hidden by default */
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo">
+            <img src="First Page Pngs (1)/4x/Asset 10@4x.png" alt="Logo">
+        </div>
+        <nav>
+            <ul>
+                <li>Teach</li>
+                <li>Tasks</li>
+                <li>Assign</li>
+                <li>Assess</li>
+                <li>Report</li>
+                <li>Library</li>
+            </ul>
+        </nav>
+        <div class="teacher-icon">
+            <img src="EEL app screens/Page 2/4x/Asset 42@4x.png" alt="Teacher Icon">
+        </div>
+    </div>
+    <main class="main-content">
+        <header class="header">
+            <h1>Session 1: Meet the Children</h1>
+         
+        </header>
+        <section class="cards">
+            <div class="card">
+                <div class="card-content">
+                    <img src="EEL app screens/page 4/4x/Asset 135@4x.png" alt="Classroom Teaching">
+                    <div class="text-content">
+                        <h2>Classroom Teaching</h2>
+                        <ul>
+                            <li><a href="fifth.html">Learning Video</a></li>
+                            <li><a href="sixth.html">Vocabulary</a></li>
+                            <li><a href="#" id="lesson-plan-link">Lesson Plan</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-content">
+                    <img src="EEL app screens/page 4/4x/Asset 134@4x.png" alt="Story Telling">
+                    <div class="text-content">
+                        <h2>Story Telling</h2>
+                        <ul>
+                            <li><a href="nineth.html">Audio/Visual</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-content">
+                    <img src="EEL app screens/page 4/4x/Asset 135@4x.png" alt="Practice Session">
+                    <div class="text-content">
+                        <h2>Practice Session</h2>
+                        <ul>
+                            <li><a href="tenth.html">CBT</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-content">
+                    <img src="EEL app screens/page 4/4x/Asset 137@4x.png" alt="Challenge Yourself">
+                    <div class="text-content">
+                        <h2>Challenge Yourself</h2>
+                        <ul>
+                            <li><a href="eleventh.html">CBT</a></li>
+                            <li><a href="twelve.html">Boggle</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Popup overlay -->
+    <div class="popup-overlay" id="popup-overlay"></div>
+
+    <!-- Popup content -->
+    <div class="popup" id="popup">
+        <h2>Lesson Plan</h2>
+    
+        <img src="EEL app screens/Pop up 2/4x/Asset 227@4x.png" alt="Lesson Plan Image">
+        <button onclick="viewPDF()">View PDF</button>
+        <button onclick="closePopup()">Close</button>
+    </div>
+
+    <script>
+        // Function to open the popup
+        function openPopup() {
+            document.getElementById('popup').style.display = 'block';
+            document.getElementById('popup-overlay').style.display = 'block';
+        }
+
+        // Function to close the popup
+        function closePopup() {
+            document.getElementById('popup').style.display = 'none';
+            document.getElementById('popup-overlay').style.display = 'none';
+        }
+
+        // Function to view the PDF
+        function viewPDF() {
+            window.open('cesa101.pdf', '_blank');
+        }
+
+        // Add onclick listener to the Lesson Plan link
+        document.getElementById('lesson-plan-link').addEventListener('click', function(event) {
+            event.preventDefault();
+            openPopup();
+        });
+    </script>
+</body>
+</html>

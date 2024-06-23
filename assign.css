@@ -1,0 +1,116 @@
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    display: flex;
+    height: 100vh;
+}
+
+.container {
+    display: flex;
+    width: 100%;
+}
+
+.sidebar {
+    width: 250px;
+    background-color: #2C2D74;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.sidebar-header {
+    text-align: center;
+}
+
+.sidebar-header img {
+    width: 50px;
+}
+
+.nav-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.nav-item {
+    padding: 15px;
+    cursor: pointer;
+    text-align: center;
+    border-radius: 8px;
+    margin: 5px 0;
+}
+
+.nav-item.active,
+.nav-item:hover {
+    background-color: #f25b72;
+}
+
+.sidebar-footer {
+    text-align: center;
+}
+
+.profile-pic {
+    width: 50px;
+    border-radius: 50%;
+}
+
+.main-content {
+    flex-grow: 1;
+    padding: 40px;
+    background-color: #F7F8FC;
+}
+
+.main-content h2 {
+    margin-top: 0;
+}
+
+.assign-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.date-group {
+    display: flex;
+    justify-content: space-between;
+}
+
+.date-group input {
+    width: 45%;
+}
+
+.learner-select {
+    display: flex;
+    gap: 20px;
+}
+
+.learners-list {
+    display: flex;
+    flex-direction: column;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #2C2D74;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #4a4ad4;
+}
+
+.assignment-summary {
+    margin-top: 20px;
+    font-size: 0.9em;
+    color: #555;
+}

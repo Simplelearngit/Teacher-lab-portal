@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neo Language Labs</title>
+    <link rel="stylesheet" href="second.css">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo">
+            <img src="EEL app screens/Page 2/4x/Asset 21@4x.png" alt="Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="fourth.html">Teach</a></li>
+                <li>Tasks</li>
+                <li>Assign</li>
+                <li>Assess</li>
+                <li>Report</li>
+                <li>Library</li>
+            </ul>
+        </nav>
+        <div class="teacher-icon">
+            <img src="EEL app screens/Page 2/4x/Asset 42@4x.png" alt="Teacher Icon">
+        </div>
+    </div>
+    <div class="main-content">
+        <header>
+            <h1>Neo Language Labs</h1>
+            <div class="language-selector">
+                <label for="language">Select Language</label>
+                <select id="language">
+                    <option value="english">English</option>
+                    <option value="spanish">Spanish</option>
+                    <option value="french">French</option>
+                    <option value="german">German</option>
+                    <option value="mandarin">Mandarin</option>
+                    <option value="hindi">Hindi</option>
+                    <option value="arabic">Arabic</option>
+                    <option value="portuguese">Portuguese</option>
+                    <option value="russian">Russian</option>
+                    <option value="japanese">Japanese</option>
+                    <option value="korean">Korean</option>
+                </select>
+            </div>
+            <div class="user-icon">K</div>
+        </header>
+        <div class="grades-container">
+            <div class="grades">
+                <div class="grade" onclick="navigateToSession('third.html')">Grade 1<br>Foundation<br>18 Sessions<div class="arrow"></div></div>
+                <div class="grade">Grade 2<br>Foundation+<br>26 Sessions<div class="arrow"></div></div>
+                <div class="grade">Grade 3<br>Module 1<br>36 Sessions<div class="arrow"></div></div>
+                <div class="grade">Grade 4<br>Module 2<br>36 Sessions<div class="arrow"></div></div>
+                <div class="grade">Grade 5<br>Module 3<br>30 Sessions<div class="arrow"></div></div>
+                <div class="grade">Grade 6<br>Module 4<br>36 Sessions<div class="arrow"></div></div>
+                <div class="grade">Grade 7<br>Module 5<br>38 Sessions<div class="arrow"></div></div>
+                <div class="grade">Grade 8<br>Module 6<br>38 Sessions<div class="arrow"></div></div>
+                <div class="grade">Grade 9<br>Module 7<br>32 Sessions<div class="arrow"></div></div>
+                <div class="grade">Grade 10<br>Module 8<br>34 Sessions<div class="arrow"></div></div>
+                <div class="grade">Grade 11<br>English Grammar<br>18 Sessions<div class="arrow"></div></div>
+                <div class="grade">Grade 12<br>English Grammar<br>18 Sessions<div class="arrow"></div></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function navigateToSession(url) {
+            window.location.href = url;
+        }
+    </script>
+</body>
+</html>

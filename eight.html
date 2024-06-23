@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meet the Children Practice Session</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .header .title {
+            font-size: 20px;
+            font-weight: bold;
+            color: #333;
+        }
+        .header .user-icon {
+            width: 40px;
+            height: 40px;
+            background-color: #f76c6c;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+        }
+        .content {
+            margin-top: 20px;
+        }
+        .content h2 {
+            font-size: 18px;
+            color: #555;
+        }
+        .image-form-container {
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+        }
+        .image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+        }
+        .image img {
+            max-width: 100%;
+            border-radius: 10px;
+        }
+        .form {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .form label {
+            font-size: 16px;
+            color: #333;
+        }
+        .form input {
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 100%;
+        }
+        .button {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        .button button {
+            padding: 10px 20px;
+            font-size: 16px;
+            color: white;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .button button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+    <script>
+        function handleSubmit() {
+            const samar = document.getElementById('samar').value.trim();
+            const malika = document.getElementById('malika').value.trim();
+            const shreenath = document.getElementById('shreenath').value.trim();
+            const kajol = document.getElementById('kajol').value.trim();
+
+            if (!samar || !malika || !shreenath || !kajol) {
+                alert("Please fill in all the fields.");
+                return;
+            }
+
+            alert("Submitted successfully!");
+            document.getElementById("finishButton").style.display = "inline-block";
+        }
+        
+        function handleFinish() {
+            window.location.href = "fourth.html";
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="title">
+                Grade 1 | Foundation | Session 1 : Meet the Children | Practice Session CBT
+            </div>
+           
+        </div>
+        <div class="content">
+            <h2>What is the age of each child? Type your answer in each blank.</h2>
+            <div class="image-form-container">
+                <div class="image">
+                    <img src="EEL app screens/page 10/4x/4x/Image for page 10@4x.png" alt="Children's Birthday Party">
+                </div>
+                <div class="form">
+                    <label for="samar">Samar <input type="text" id="samar" placeholder="Years"></label>
+                    <label for="malika">Malika <input type="text" id="malika" placeholder="Years"></label>
+                    <label for="shreenath">Shreenath <input type="text" id="shreenath" placeholder="Years"></label>
+                    <label for="kajol">Kajol <input type="text" id="kajol" placeholder="Years"></label>
+                </div>
+            </div>
+            <div class="button">
+                <button type="button" onclick="handleSubmit()">Submit</button>
+                <button id="finishButton" type="button" onclick="handleFinish()" style="display:none;">Finish</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

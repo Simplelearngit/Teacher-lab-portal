@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="left-side">
+            <img src="First Page Pngs (1)/4x/Asset 1@4x.png" alt="Educational Graphic" class="graphic">
+        </div>
+        <div class="right-side">
+            <div class="login-container">
+                <img src="First Page Pngs (1)/4x/Asset 10@4x.png" alt="Logo" class="logo">
+                <h2>Enter your Login Credentials</h2>
+                <?php if (isset($error_message)): ?>
+                    <p class="error-message"><?php echo $error_message; ?></p>
+                <?php endif; ?>
+
+                <form class="login-form" method="POST" action="login.php" onsubmit="handleLogin(event)">
+                    <div class="input-group">
+                        <input type="text" name="username" placeholder="Enter Username" required autocomplete="off">
+                    </div>
+                    <div class="input-group">
+                        <input type="password" name="password" placeholder="Enter Password" required autocomplete="off">
+                    </div>
+                    <button type="submit">Login</button>
+                </form>
+                <p>Don't have an Account? <a href="register.html">Sign Up</a></p>
+                <p class="contact">+91 8793757639</p>
+                <p class="footer">
+                    <a href="#">Disclaimer</a> | <a href="#">Terms</a> | <a href="#">Privacy Policy</a>
+                </p>
+                <p class="copyright">© 2023-2024 GlobalEdutech. All rights reserved v1.0.2</p>
+                
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function handleLogin(event) {
+            event.preventDefault(); // Prevent the default form submission
+
+            // Redirect to the Grade 1 Foundation page
+            window.location.href = 'second.html';
+        }
+    </script>
+</body>
+</html>
